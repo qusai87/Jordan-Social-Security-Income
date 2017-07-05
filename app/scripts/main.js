@@ -82,7 +82,7 @@
     var retirementLength = parseInt($('#retirement-length').val());
     var age = parseInt($('#age').val());
     var service_years = Math.round(retirementLength / 12);
-    var sex = $('.is-checked [name=sex]').val()
+    var sex = $('[name=sex]:checked').val();
 
     $('.result-note').html('');
     $('.result-body').html('');
