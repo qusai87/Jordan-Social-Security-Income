@@ -267,3 +267,13 @@ input {
   color: red;
   text-align: center;
 }
+
+input[type="text"]:-moz-placeholder {
+    text-align: right;
+}
+input[type="text"]:-ms-input-placeholder {
+    text-align: right;
+}
+input[type="text"]::-webkit-input-placeholder {
+    text-align: right;
+}
