@@ -268,12 +268,19 @@ input {
   text-align: center;
 }
 
-input[type="text"]:-moz-placeholder {
-    text-align: right;
+.result-note {
+  color: darkgray;
 }
-input[type="text"]:-ms-input-placeholder {
-    text-align: right;
+
+.right-header {
+  text-align: right;
+  direction: rtl;
 }
-input[type="text"]::-webkit-input-placeholder {
-    text-align: right;
+
+.mdl-layout__tab-bar {
+  direction: rtl;
+}
+
+.mdl-demo .mdl-layout__header-row {
+  padding-right: 40px;
 }

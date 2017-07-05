@@ -17,8 +17,11 @@
  *
  */
 /* eslint-env browser */
-(function() {
+(function($, Handlebars) {
   'use strict';
+
+  var source = $('#entry-template').html();
+  var template = Handlebars.compile(source);
 
   // Check to make sure service workers are supported in the current browser,
   // and that the current page is accessed from a secure origin. Using a
@@ -74,32 +77,59 @@
 
   // Your custom JavaScript goes here
 
-  $("input").on("change", function() {
-    var avg_income = parseInt($('#gross_income').val())*36/36;
-    var retirement_length = parseInt($('#retirement_length').val());
+  $('input').on('change keyup', function() {
+    var avgIncome = parseInt($('#gross-income').val())*36/36;
+    var retirementLength = parseInt($('#retirement-length').val());
     var age = parseInt($('#age').val());
-    var service_years = retirement_length / 12;
-    var sex = $('[name=sex]').val();
+    var service_years = Math.round(retirementLength / 12);
+    var sex = $('.is-checked [name=sex]').val()
 
-    if (retirement_length>=180) {
-      //var results = (avg_income*retirement_length*1.25)/360;
-      var results = Math.min(avg_income * 2.5/100 * service_years, avg_income*75/100);
-      if (avg_income && retirement_length) {
-        $('.result').html(results);
-        $('.result-error').html('');
-      }
-      if ((age<60 && sex == '1') || (age<55 && sex == '2')) {
-        //$('.result-error').text('(العمر غير صحيح)');
-      }
-    } else {
-      $('.result-error').text('(مدة الخدمة للتقاعد غير صحيحة)');
-      $('.result').html(0);
+    $('.result-note').html('');
+    $('.result-body').html('');
+    $('.result-error').html('');
+    $('.result-error-desc').html('');
+
+    if (retirementLength<180) {
+      $('.result-error').text('مدة الخدمة للتقاعد غير كافية!');
+      $('.result-error-desc').append('<p>(عدد الاشتراكات يجب ان تكون (180) اشتراكاً على الأقل منها (60) اشتراكاً فعلياً)');
     }
-    // if ($(this).hasClass("is-checked")) {
-    //   return $(this).children().first().attr("checked", true);
-    // } else {
-    //   return $(this).children().first().removeAttr("checked");
-    // }
+    //var results = (avgIncome*retirementLength*1.25)/360;
+    if (sex == '1') {
+      if (age<60) {
+        age = 60-age;
+      } else {
+        age = 0;
+      }
+    }
+
+    if (sex == '2') {
+      if (age<55) {
+        age = 55-age;
+      } else {
+        age = 0;
+      }
+    }
+
+    var current_pension = Math.round(Math.min(avgIncome * 2.5/100 * service_years, avgIncome*75/100));
+    var expected_pension = Math.round(Math.min(avgIncome * 2.5/100 * (service_years+age), avgIncome*75/100));
+
+    var expected_retirement = (service_years+age)*12;
+
+    var context = {
+      average_income: avgIncome, 
+      current_pension: current_pension,  
+      expected_pension: expected_pension,  
+      service_years : service_years, 
+      expected_retirement: expected_retirement,
+      age: age 
+    };
+
+    var html = template(context);
+
+    if (avgIncome && retirementLength && age) {
+      $('.result-body').html(html);
+      $('.result-note').append('<p>** يرجى العلم ان هذه الحسابات غير رسمية ويمكن ان تكون غير دقيقة</p>');
+    }
   });
 
-})();
+})(window.jQuery,window.Handlebars);

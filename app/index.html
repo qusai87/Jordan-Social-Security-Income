@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan Social Security Income</title>
+    <title>الراتب التقاعدي في الضمان الاجتماعي</title>
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
@@ -51,7 +51,7 @@
     material.purple-indigo.min.css
     -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/mdl/1.2.1/material.rtl.min.css">
-    <link rel="stylesheet" href="styles/getmdl-select.min.css">
+    <link rel="stylesheet" href="styles/lib/getmdl-select.min.css">
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
@@ -59,12 +59,13 @@
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Jordan Social Security Income</h3>
+        <div class="mdl-layout__header-row right-header">
+          <h3>الراتب التقاعدي في الضمان الاجتماعي</h3>
         </div>
+        <p class="right-header"></p>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#calculator" class="mdl-layout__tab is-active">Calculator</a>
-          <a href="#overview" class="mdl-layout__tab">Overview</a>
+          <a href="#calculator" class="mdl-layout__tab is-active">حساب الراتب</a>
+          <a href="#overview" class="mdl-layout__tab">معلومات عامة</a>
           <!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -90,17 +91,17 @@
                             </ul>
                         </div> -->
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="gross_income" tabIndex="3" />
-                            <label class="mdl-textfield__label" for="gross_income">Gross Income (الراتب الاساسي الاخير)</label>
+                            <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="gross-income" tabIndex="3" />
+                            <label class="mdl-textfield__label" for="gross-income">متوسط الاجر الشهري (الراتب الاساسي لاخر ٣٦ شهرا )</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="retirement_length" tabIndex="4" />
-                            <label class="mdl-textfield__label" for="retirement_length"># Retirement  (مدة الخدمة للتقاعد)</label>
+                            <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="retirement-length" tabIndex="4" />
+                            <label class="mdl-textfield__label" for="retirement-length">مدة الخدمة للتقاعد (عدد الاشتراكات)</label>
                         </div>
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="age" tabIndex="5" />
-                            <label class="mdl-textfield__label" for="retirement_age">Age (العمر)</label>
+                            <label class="mdl-textfield__label" for="age">العمر الحالي</label>
                         </div>
                         <div>
                             <fieldset>الجنس</fieldset>
@@ -117,14 +118,11 @@
                 </form>
             </div>
             <div class="side right-side">
-                <section class="">
-                    <label class="result-error"></label>
+                <label class="result-error"></label>
+                <p class="result-error-desc"></p>
+                <section class="result-body">
                 </section>
-                <section class="">
-                    <fieldset>
-                        <legend><b>الراتب التقاعدي الاساسي</b></legend>
-                        <h2 class="result"></h2>
-                    </fieldset>
+                 <section class="result-note">
                 </section>
             </div>
           </section>             
@@ -193,20 +191,18 @@
                 </div>
             </div> -->
 
-            <div class="b-post__body h-restore--on-preview h-padding-horiz-xxl h-padding-top-xl h-padding-bottom-m h-clearfix">
-                <div class="b-post__content js-post__content b-post__hide-when-deleted">
-                    <hr class="b-divider--section OLD__section-divider">
-
-                    <div class="b-media h-hide--on-preview">
-                        <div class="b-media__body">
-                                <h2 class="b-post__title js-post-title OLD__post-title">
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <div class="">
+                                <h2 class="">
                                     طريقة احتساب راتب التقاعد في قانون الضمان الاجتماعي الأردني
                                 </h2>
                         </div>
                     </div>
                     
-                    <div class="OLD__post-content h-padding-vert-xl">
-                        <div class="js-post__content-text OLD__post-content-text restore h-wordwrap" itemprop="text">
+                    <div class="">
+                        <div class="" itemprop="text">
                             <span style="font-size:20px"><b><b><span style="color:#008000">راتب التقاعد في قانون الضمان الاجتماعي</span>
                             <br>
                             <br>
@@ -226,7 +222,7 @@
                             <br>
                             وعليه فإن "المؤمن عليه" وفقا لنص المادة الثانية من قانون الضمان الاجتماعي هو: الشخص الطبيعي الذي تسري عليه احكام القانون ذكراً كان أم أنثى.<br>
                             <br>
-                            وبعد التعرف على ماهية المؤمن عليه سنتطرق في هذا المقال لأنواع الرواتب الخمس وشروطها وفقا لقانون الضمان الاجتماعي الجديد لسنة 2014 ، ونبدأ أولا<a href="http://shneler.com/vb/" target="_blank"> براتب</a> تقاعد الشيخوخة:<br>
+                            وبعد التعرف على ماهية المؤمن عليه سنتطرق في هذا المقال لأنواع الرواتب الخمس وشروطها وفقا لقانون الضمان الاجتماعي الجديد لسنة 2014 ، ونبدأ أولا براتب تقاعد الشيخوخة:<br>
                             <br>
                             <br>
                             <span style="color:#0000FF">أولا: راتب تقاعد الشيخوخة</span><br>
@@ -446,10 +442,51 @@
       </main>
     </div>
 
+    <script id="entry-template" type="text/x-handlebars-template">
+         <p>
+            <b>الراتب التقاعدي الاساسي</b>
+        </p>
+        <table class="mdl-data-table mdl-js-data-table">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">النتائج</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">متوسط الاجر الشهري</td>
+              <td><b>{{average_income}}</b></td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">عدد سنوات الخدمة</td>
+              <td><b>{{service_years}}</b></td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">الراتب التقاعدي الاساسي</td>
+              <td><b>{{current_pension}}</b> دينار</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">الراتب التقاعدي الاساسي عند نهاية الخدمة</td>
+              <td><b>{{expected_pension}}</b> دينار</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">عدد الاشتراكات نهاية الخدمة</td>
+              <td><b>{{expected_retirement}}</b> اشتراك</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">العمر المتبقي</td>
+              <td><b>{{age}}</b> سنة</td>
+            </tr>
+          </tbody>
+        </table>
+    </script>
+
     <script src="https://cdn.rtlcss.com/mdl/1.2.1/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" type="text/javascript"></script>
     <!-- build:js scripts/main.min.js -->
-    <script src="scripts/getmdl-select.min.js"></script>
+    <script src="scripts/lib/getmdl-select.min.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
